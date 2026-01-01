@@ -1,10 +1,19 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero() {
+export default async function RootPage() {
+  const cookie = await cookies();
+  const token = cookie.get("token")?.value;
+
+  if (token) {
+    redirect("/app");
+  }
+
   return (
     <div className="min-h-screen w-full flex flex-col gap-16 items-center justify-center px-6 py-16">
       <div className="text-center max-w-3xl">
@@ -68,5 +77,5 @@ export default function Hero() {
       </div>
 
     </div>
-  );
+  )
 }
