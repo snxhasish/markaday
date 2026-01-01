@@ -41,7 +41,7 @@ export default function NewEntry({ tags, closeButton = false }: { tags: UserTag[
         }
     }
 
-    if (todays_entry && todays_entry.tags.length > 0) {
+    if (todays_entry && todays_entry?.tags?.length > 0) {
         return (
             <div className="w-full flex flex-col bg-card text-card-foreground rounded-lg p-5 sm:max-w-md md:max-w-lg shadow shadow-card">
                 <h2 className="text-2xl font-medium">Edit today&apos;s entry</h2>
