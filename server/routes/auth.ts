@@ -104,8 +104,7 @@ router.post("/email/verify", async (req, res) => {
         sameSite: isProd ? "none" : "lax",
         path: "/",
         maxAge: DAYS_28,
-        // incase of production, set the cookie for the main domain
-        // domain: ".yourdomain.com",
+        domain: ".snehasish.xyz"
     });
 
     return res.status(200).json({ success: true, user: { id: user._id, email: user.email, username: user.username, avatar_url: user.avatar_url } });

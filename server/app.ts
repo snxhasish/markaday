@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
     cors({
-        origin: "https://markaday.vercel.app",
+        origin: "https://markaday.snehasish.xyz",
         credentials: true,
     })
 );
