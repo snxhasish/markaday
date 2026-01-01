@@ -10,7 +10,7 @@ const font = Nunito({
 
 export const metadata: Metadata = {
   title: "MarkADay",
-  description: "",
+  description: "A simple way to track how your day went. Log each day with a color-coded tag, add a short note if you want, and watch your life take shape as a grid over time. Share your days publicly or keep them private.",
 };
 
 export default async function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
