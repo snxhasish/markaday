@@ -10,7 +10,7 @@ export async function createEntry(tags: string[], notes?: string) {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/entries/create`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/entries/create`, {
         method: "POST",
         headers: {
             cookie: cookieHeader,

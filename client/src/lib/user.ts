@@ -10,7 +10,7 @@ export async function getUser() {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/me`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/me`, {
         headers: {
             cookie: cookieHeader
         },

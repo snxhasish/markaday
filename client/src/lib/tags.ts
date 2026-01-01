@@ -14,7 +14,7 @@ export async function getTags() {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/tags`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tags`, {
         headers: {
             cookie: cookieHeader
         },

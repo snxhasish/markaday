@@ -20,7 +20,7 @@ export async function getEntries() {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/entries`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/entries`, {
         headers: {
             cookie: cookieHeader
         },

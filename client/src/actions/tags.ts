@@ -10,7 +10,7 @@ export async function createTag(label: string, color: string) {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/tags/create`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tags/create`, {
         method: "POST",
         headers: {
             cookie: cookieHeader,

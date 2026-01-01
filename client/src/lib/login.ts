@@ -1,5 +1,5 @@
 export async function sendLoginVerification(email: string) {
-    const res = await fetch(`${process.env.API_URL}/auth/email`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/email`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export async function sendLoginVerification(email: string) {
 }
 
 export async function verifyLoginCode(email: string, code: string) {
-    const res = await fetch(`${process.env.API_URL}/auth/email/verify`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/email/verify`, {
         method: "POST",
         credentials: "include",
         headers: {

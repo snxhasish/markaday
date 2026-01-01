@@ -9,7 +9,7 @@ export async function getTagStats() {
         .map(c => `${c.name}=${c.value}`)
         .join("; ");
 
-    const res = await fetch(`${process.env.API_URL}/stats/tags?from=${getPastDate(6)}&to=${getPastDate(0)}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stats/tags?from=${getPastDate(6)}&to=${getPastDate(0)}`, {
         headers: {
             cookie: cookieHeader
         },
