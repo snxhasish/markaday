@@ -6,7 +6,7 @@ import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import { sendLoginVerification, verifyLoginCode } from "@/lib/login";
 import { Spinner } from "@/components/ui/spinner";
@@ -104,7 +104,7 @@ export default function LoginPage() {
 
                             {
                                 currentStep === "email" ?
-                                    <>
+                                    <React.Fragment key="email-step">
                                         <Field>
                                             <FieldLabel htmlFor="email">Email</FieldLabel>
                                             <Input
@@ -128,9 +128,10 @@ export default function LoginPage() {
 
                                             </Button>
                                         </Field>
-                                    </>
+                                    </React.Fragment>
                                     :
-                                    <>
+                                    
+                                    <React.Fragment key="vf-step">
                                         <Field>
                                             <FieldLabel htmlFor="vfcode">Verification Code</FieldLabel>
                                             <Input
@@ -153,7 +154,7 @@ export default function LoginPage() {
 
                                             </Button>
                                         </Field>
-                                    </>
+                                    </React.Fragment>
                             }
 
                             {/* <FieldSeparator>Or</FieldSeparator>

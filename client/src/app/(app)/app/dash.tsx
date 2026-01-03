@@ -7,8 +7,13 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { ChartAreaInteractive } from "@/components/tags-chart";
 import { UserTag } from "@/lib/tags";
 import { HistoryIcon } from "lucide-react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function Dash({ dayMap, stats, tags }: { dayMap: Map<string, Entry>; stats: { tags: any }; tags: UserTag[] }) {
+    const isMobile = useMediaQuery("(max-width: 639px)");
+    const isTablet = useMediaQuery("(min-width: 640px) and (max-width: 1023px)");
+    const isDesktop = useMediaQuery("(min-width: 1024px)");
+
     return (
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
             <div className="col-span-3 w-full bg-card text-card-foreground shadow shadow-card p-5 rounded-xl flex flex-col items-center gap-5">
@@ -40,7 +45,7 @@ export default function Dash({ dayMap, stats, tags }: { dayMap: Map<string, Entr
 
                 <CalendarGrid
                     data={dayMap}
-                    size={22}
+                    size={isMobile ? 15 : isTablet ? 18 : 22}
                 />
             </div>
 
