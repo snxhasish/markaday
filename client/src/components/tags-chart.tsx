@@ -129,7 +129,7 @@ export function ChartAreaInteractive({
                     className="h-[250px] w-full"
                 >
                     <AreaChart data={filteredData}>
-                        <CartesianGrid vertical={false} />
+                        <CartesianGrid vertical={true} />
 
                         <XAxis
                             dataKey="date"
@@ -171,7 +171,7 @@ export function ChartAreaInteractive({
                             />
                         ))}
 
-                        <ChartLegend content={<ChartLegendContent />} />
+                        {/* <ChartLegend content={<ChartLegendContent />} /> */}
                     </AreaChart>
                 </ChartContainer>
             </CardContent>

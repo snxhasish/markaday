@@ -7,8 +7,8 @@ export default function Appbar({ todays_entry }: { todays_entry?: TodaysEntry })
     console.log(todays_entry)
 
     return (
-        <nav className="fixed z-99 w-full bg-transparent bottom-0 left-0 right-0 flex justify-center items-center py-8 px-4">
-            <div className="w-fit h-fit rounded-full p-5 bg-primary/5 border backdrop-blur-xl shadow flex justify-center items-center gap-4">
+        <nav className="fixed z-99 w-full bg-transparent bottom-0 left-0 right-0 flex justify-center items-center py-4 md:py-8 px-4">
+            <div className="w-fit h-fit rounded-full p-2 sm:p-4 md:p-5 bg-primary/5 border backdrop-blur-xl shadow flex justify-center items-center gap-4">
                 <AppbarItem
                     href="/app"
                     icon={(

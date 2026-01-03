@@ -9,11 +9,14 @@ import { useState } from "react";
 import { createTag } from "@/actions/tags";
 import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
+import { useRouter } from "next/navigation";
 
 export default function CreateTag() {
+    const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [label, setLabel] = useState<string>("");
     const [color, setColor] = useState<string>("#FFFFFF");
+    const [open, setOpen] = useState(false);
 
     const handleCreateTag = async () => {
         if (!label) return toast.error("Tag label is required.");
@@ -25,12 +28,18 @@ export default function CreateTag() {
 
         setLoading(false);
 
-        if (status) toast.success("Tag created.");
+        if (status) {
+            setLabel("");
+            setColor("#FFFFFF");
+            setOpen(false);
+            toast.success("Tag created.");
+            router.refresh();
+        }
         else toast.error("Failed to create tag. Please try again.");
     }
 
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
                 <Button
                     variant="outline"

@@ -15,7 +15,7 @@ export default async function App() {
     // console.log();
 
     return (
-        <main className="h-screen w-full p-4 flex flex-col items-center gap-4 px-20">
+        <main className="h-screen w-full p-4 flex flex-col items-center gap-4 px-2 sm:px-8 md:px-20">
             <Dash
                 dayMap={dayMap}
                 stats={{

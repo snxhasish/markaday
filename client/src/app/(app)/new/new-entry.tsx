@@ -34,8 +34,14 @@ export default function NewEntry({ tags, closeButton = false }: { tags: UserTag[
 
         if (status) {
             toast.success("Day entry created successfully");
-            if (closeButton) router.back();
-            else router.push("/app");
+            if (closeButton) {
+                router.back();
+                router.refresh();
+            }
+            else {
+                router.push("/app");
+                router.refresh();
+            }
         } else {
             toast.error("Could not create day entry. Please retry.");
         }

@@ -15,7 +15,7 @@ export default function Userbar({ children }: { children: React.ReactNode }) {
     return (
         <main className="h-screen flex flex-col gap-4">
             <nav className="w-full top-0 left-0 right-0 flex justify-center items-center py-8 px-4">
-                <div className="w-full px-10 flex items-center justify-between gap-4">
+                <div className="w-full px-0 sm:px-5 md:px-10 flex items-center justify-between gap-4">
                     <Image
                         src="/icon.png"
                         alt="Icon"

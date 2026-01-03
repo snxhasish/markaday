@@ -43,25 +43,29 @@ export default function Dash({ dayMap, stats, tags }: { dayMap: Map<string, Entr
                     </Select>
                 </div>
 
-                <CalendarGrid
-                    data={dayMap}
-                    size={isMobile ? 15 : isTablet ? 18 : 22}
-                />
+                <div className="w-full pb-2 overflow-x-auto">
+                    <CalendarGrid
+                        data={dayMap}
+                        size={isMobile ? 15 : isTablet ? 18 : 22}
+                    />
+                </div>
             </div>
 
-            <div className="w-full col-span-2 bg-card text-card-foreground shadow shadow-card p-5 rounded-xl">
+            <div className="w-full col-span-3 lg:col-span-2 bg-card text-card-foreground shadow shadow-card p-5 rounded-xl">
                 <ChartAreaInteractive
                     apiData={stats.tags}
                     userTags={tags}
                 />
             </div>
 
-            <div className="col-span-1 w-full h-full bg-card text-card-foreground p-4 rounded-xl flex flex-col items-center justify-center gap-4">
+            <div className="col-span-3 lg:col-span-1 w-full h-full bg-card text-card-foreground p-4 rounded-xl flex flex-col items-center justify-center gap-4">
                 <span>
                     <HistoryIcon className="size-20 text-muted-foreground" />
                 </span>
                 <h2 className="text-xl font-medium">More stats coming soon.</h2>
             </div>
+
+            <span className="spacing col-span-3 mb-[25%] md:mb-[10%]"></span>
         </div>
     )
 }
