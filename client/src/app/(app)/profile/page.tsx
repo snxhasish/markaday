@@ -1,9 +1,18 @@
-export default function ProfilePage() {
+import { Entry, getEntries } from "@/lib/entries";
+import Profile from "./profile";
+
+export default async function ProfilePage() {
+    const entries = await getEntries();
+
+    const dayMap = new Map<string, Entry>(
+        entries?.map(entry => [entry.date, entry])
+    );
+
     return (
-        <div className="h-full w-full flex items-center justify-center">
-            <h2 className="text-lg font-medium">
-                Coming soon.
-            </h2>
+        <div className="w-full flex justify-center">
+            <Profile
+                dayMap={dayMap}
+            />
         </div>
     )
 }

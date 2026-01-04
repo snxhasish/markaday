@@ -12,7 +12,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 export default function Dash({ dayMap, stats, tags }: { dayMap: Map<string, Entry>; stats: { tags: any }; tags: UserTag[] }) {
     const isMobile = useMediaQuery("(max-width: 639px)");
     const isTablet = useMediaQuery("(min-width: 640px) and (max-width: 1023px)");
-    const isDesktop = useMediaQuery("(min-width: 1024px)");
+    // const isDesktop = useMediaQuery("(min-width: 1024px)");
 
     return (
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
