@@ -1,6 +1,4 @@
-//server side
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 export async function getUser() {
     const cookieStore = await cookies();
